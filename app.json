@@ -20,7 +20,7 @@
       "package": "com.desaiaditi.reverie"
     },
     "web": {
-      "output": "static"
+      "output": "server"
     },
     "plugins": [
       "expo-router",
