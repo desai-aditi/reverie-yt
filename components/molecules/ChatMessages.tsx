@@ -7,7 +7,7 @@ export default function ChatMessages({ messages, stripMemoryData}: any) {
     <View>
       {messages.map((m: any) => {
         const text = m.parts.filter((p: any) => p.type=== 'text').map((p: any) => p.text).join('');
-        const display = m.role === 'asistant' ? stripMemoryData(text): text;
+        const display = m.role === 'assistant' && typeof stripMemoryData === 'function' ? stripMemoryData(text) : text;
         return <ChatBubble key={m.id} role={m.role} text={display} />
       })}
     </View>
